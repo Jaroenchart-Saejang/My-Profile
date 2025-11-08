@@ -1,0 +1,77 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap");
+@import "tailwindcss";
+
+/* Enable class-based dark mode in Tailwind v4 */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* Tailwind v4 theming — custom tokens */
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, "Segoe UI", Roboto, Helvetica,
+    Arial, sans-serif;
+
+  /* brand color scale */
+  --color-brand-50: #ecfeff;
+  --color-brand-100: #cffafe;
+  --color-brand-200: #a5f3fc;
+  --color-brand-300: #67e8f9;
+  --color-brand-400: #22d3ee;
+  --color-brand-500: #06b6d4;
+  --color-brand-600: #0891b2;
+  --color-brand-700: #0e7490;
+  --color-brand-800: #155e75;
+  --color-brand-900: #164e63;
+  --color-amber-400: #facc15; /* yellow for light */
+  --color-sky-500: #0ea5e9; /* blue for dark  */
+  /* custom shadow */
+  --shadow-soft: 0 10px 30px -12px rgba(2, 132, 199, 0.25);
+}
+
+/* base */
+html,
+body,
+#root {
+  height: 100%;
+}
+
+/* ring color for focus states, with dark override */
+:root {
+  --ring: var(--color-brand-500);
+  color-scheme: light dark;
+}
+.dark {
+  --ring: var(--color-brand-300);
+}
+
+/* utilities */
+.container-px {
+  @apply px-4 sm:px-6 lg:px-8;
+}
+.section-py {
+  @apply py-16 sm:py-20 lg:py-28;
+}
+.section-title {
+  @apply text-3xl sm:text-4xl font-extrabold tracking-tight font-sans;
+}
+.section-subtitle {
+  @apply mt-3 text-base sm:text-lg text-slate-600 dark:text-slate-400;
+}
+
+.card {
+  @apply rounded-2xl border border-slate-200 dark:border-slate-800
+         bg-white/70 dark:bg-slate-900/70 backdrop-blur shadow-soft;
+}
+
+.btn-primary {
+  @apply inline-flex items-center gap-2 rounded-xl bg-brand-600 px-4 py-2
+         font-semibold text-white shadow-soft hover:bg-brand-500 transition;
+}
+
+.badge {
+  @apply inline-flex items-center rounded-full border border-slate-200 dark:border-slate-700
+         px-2.5 py-0.5 text-xs font-medium text-slate-600 dark:text-slate-300;
+}
+
+/* anchor offset for sticky header */
+:target {
+  scroll-margin-top: 96px;
+}

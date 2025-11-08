@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chen's Site</title>
+    <meta
+      name="description"
+      content="Portfolio website of Jaroenchart — projects, experience, and contact."
+    />
+    <meta property="og:title" content="Jaroenchart — Portfolio" />
+    <meta
+      property="og:description"
+      content="Projects, experience, and contact."
+    />
+    <meta property="og:type" content="website" />
+
+    <!-- Let the UA know we support both color schemes -->
+    <meta name="color-scheme" content="light dark" />
+
+    <!-- This will be updated by the script below to match the current theme -->
+    <meta name="theme-color" content="#0ea5e9" />
+
+    <!-- Light/Dark CSS variables you reference in classes (e.g. var(--ring)) -->
+    <style>
+      :root {
+        --ring: #0ea5e9;
+      } /* light */
+      .dark {
+        --ring: #38bdf8;
+      } /* dark */
+    </style>
+
+    <!-- Prevent theme flash + sync <meta name="theme-color"> -->
+    <script>
+      (function () {
+        const saved = localStorage.getItem("theme");
+        const prefersDark = window.matchMedia(
+          "(prefers-color-scheme: dark)"
+        ).matches;
+        const theme = saved ?? (prefersDark ? "dark" : "light");
+
+        const root = document.documentElement;
+        if (theme === "dark") root.classList.add("dark");
+        else root.classList.remove("dark");
+
+        // Match browser chrome color to theme
+        const meta = document.querySelector('meta[name="theme-color"]');
+        if (meta) {
+          meta.setAttribute(
+            "content",
+            root.classList.contains("dark") ? "#020617" : "#0ea5e9"
+          );
+        }
+      })();
+    </script>
+  </head>
+
+  <body
+    class="bg-white text-slate-800 dark:bg-slate-950 dark:text-slate-200 antialiased"
+  >
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
