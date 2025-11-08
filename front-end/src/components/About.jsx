@@ -52,7 +52,7 @@ export default function About() {
                   text-xs font-medium text-slate-700 dark:border-slate-700 dark:text-slate-200
                   transition-all duration-200 ease-out will-change-transform
                   hover:-translate-y-1 hover:scale-105
-                  hover:bg-gradient-to-r hover:from-brand-400/20 hover:to-brand-600/20
+                  hover:bg-linear-to-r hover:from-brand-400/20 hover:to-brand-600/20
                   hover:text-slate-900 hover:border-brand-500
                   hover:shadow-lg hover:shadow-brand-500/30
                   dark:hover:text-white dark:hover:border-brand-400

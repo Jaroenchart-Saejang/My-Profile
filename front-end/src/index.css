@@ -83,29 +83,19 @@ body,
   scroll-margin-top: 96px;
 }
 
-/* soft brightness breathing (from earlier) */
-@keyframes twinkle-soft {
+/* brightness only */
+@keyframes glow {
   0%,
   100% {
-    opacity: 0.12;
-    transform: scale(1);
-  }
-  25% {
-    opacity: 0.16;
-    transform: scale(1.01);
+    opacity: var(--glow-min, 0.10);
   }
   50% {
-    opacity: 0.2;
-    transform: scale(1.02);
-  }
-  75% {
-    opacity: 0.16;
-    transform: scale(1.01);
+    opacity: var(--glow-max, 0.20);
   }
 }
 
-/* tiny wobble so it feels like swimming (optional) */
-@keyframes wobble {
+/* rotate + tiny scale only (no opacity here) */
+@keyframes swim {
   0%,
   100% {
     transform: rotate(-2deg) scale(1);
@@ -115,13 +105,13 @@ body,
   }
 }
 
-/* DVD-style bounce using nested transforms */
+/* DVD-style bounce wrappers (unchanged) */
 .blob-x {
   position: absolute;
   left: 0;
   top: 0;
-  width: var(--w); /* e.g., 80rem */
-  height: var(--h); /* e.g., 50rem */
+  width: var(--w);
+  height: var(--h);
   animation: moveX var(--dur-x, 14s) linear infinite alternate;
   will-change: transform;
 }
@@ -130,6 +120,13 @@ body,
   height: 100%;
   animation: moveY var(--dur-y, 10s) linear infinite alternate;
   will-change: transform;
+}
+
+/* inner blob runs BOTH animations, but on different properties */
+.blob {
+  animation: glow var(--glow-dur, 8s) ease-in-out var(--glow-delay, 0s) infinite,
+    swim var(--swim-dur, 6s) ease-in-out var(--swim-delay, 0s) infinite;
+  will-change: opacity, transform;
 }
 
 @keyframes moveX {
@@ -151,7 +148,8 @@ body,
 
 @media (prefers-reduced-motion: reduce) {
   .blob-x,
-  .blob-y {
+  .blob-y,
+  .blob {
     animation: none !important;
   }
 }

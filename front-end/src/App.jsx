@@ -26,13 +26,12 @@ export default function App() {
         >
           <div className="blob-y">
             <div
-              className="h-full w-full rounded-full bg-amber-400/50 dark:bg-sky-500/40 blur-3xl
-                    animate-[twinkle-soft_8s_ease-in-out_infinite]"
+              className="blob h-full w-full rounded-full bg-amber-400/60 dark:bg-sky-500/70 blur-3xl"
               style={{
-                animationName: "twinkle-soft, wobble",
-                animationDuration: "8s, 6s",
-                animationTimingFunction: "ease-in-out, ease-in-out",
-                animationIterationCount: "infinite, infinite",
+                "--glow-min": ".05",
+                "--glow-max": ".20",
+                "--glow-dur": "8s",
+                "--swim-dur": "6s",
               }}
             />
           </div>
@@ -50,14 +49,14 @@ export default function App() {
         >
           <div className="blob-y">
             <div
-              className="h-full w-full rounded-full bg-amber-400/30 dark:bg-sky-500/30 blur-3xl opacity-70
-                   animate-[twinkle-soft_4s_ease-in-out_infinite]"
+              className="blob h-full w-full rounded-full bg-amber-400/40 dark:bg-sky-500/70 blur-3xl opacity-70"
               style={{
-                animationName: "twinkle-soft, wobble",
-                animationDuration: "4s, 5.4s",
-                animationTimingFunction: "ease-in-out, ease-in-out",
-                animationIterationCount: "infinite, infinite",
-                animationDelay: "2.1s, 1.2s",
+                "--glow-min": ".05",
+                "--glow-max": ".20",
+                "--glow-dur": "4s",
+                "--swim-dur": "5.4s",
+                "--glow-delay": "2.1s",
+                "--swim-delay": "1.2s",
               }}
             />
           </div>
