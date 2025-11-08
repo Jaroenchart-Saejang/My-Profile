@@ -20,8 +20,8 @@
   --color-brand-700: #0e7490;
   --color-brand-800: #155e75;
   --color-brand-900: #164e63;
-  --color-amber-400: #facc15; /* yellow for light */
-  --color-sky-500: #0ea5e9; /* blue for dark  */
+  --color-amber-400: #facc15;
+  --color-sky-500: #0ea5e9;
   /* custom shadow */
   --shadow-soft: 0 10px 30px -12px rgba(2, 132, 199, 0.25);
 }
@@ -75,3 +75,15 @@ body,
 :target {
   scroll-margin-top: 96px;
 }
+
+@keyframes twinkle-soft {
+  0%, 100% { opacity: .12; transform: scale(1); }
+  25%      { opacity: .16; transform: scale(1.01); }
+  50%      { opacity: .20; transform: scale(1.02); }
+  75%      { opacity: .16; transform: scale(1.01); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reduce-motion { animation: none !important; }
+}
+
