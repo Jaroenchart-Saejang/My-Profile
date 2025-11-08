@@ -14,18 +14,54 @@ export default function App() {
 
       {/* Decorative gradient background */}
       <div aria-hidden className="pointer-events-none fixed inset-0 -z-10">
+        {/* Big swimmer */}
         <div
-          className="absolute -top-24 left-1/2 h-[50rem] w-[80rem] -translate-x-1/2
-                  rounded-full bg-amber-400/50 dark:bg-sky-500/50 blur-3xl
-                  will-change-[opacity,transform]
-                  animate-[twinkle-soft_8s_ease-in-out_infinite]"
-        />
+          className="blob-x"
+          style={{
+            "--w": "80rem",
+            "--h": "50rem",
+            "--dur-x": "16s",
+            "--dur-y": "11s",
+          }}
+        >
+          <div className="blob-y">
+            <div
+              className="h-full w-full rounded-full bg-amber-400/50 dark:bg-sky-500/40 blur-3xl
+                   animate-[twinkle-soft_8s_ease-in-out_infinite]"
+              style={{
+                animationName: "twinkle-soft, wobble",
+                animationDuration: "8s, 6s",
+                animationTimingFunction: "ease-in-out, ease-in-out",
+                animationIterationCount: "infinite, infinite",
+              }}
+            />
+          </div>
+        </div>
+
+        {/* Second swimmer (smaller, faster, phase-shifted) */}
         <div
-          className="absolute -top-20 left-[30%] h-[34rem] w-[42rem]
-                  rounded-full bg-amber-400/30 dark:bg-sky-500/30 blur-3xl
-                  opacity-70 will-change-[opacity,transform]
-                  animate-[twinkle-soft_4s_ease-in-out_infinite_2.1s]"
-        />
+          className="blob-x"
+          style={{
+            "--w": "42rem",
+            "--h": "34rem",
+            "--dur-x": "12s",
+            "--dur-y": "8s",
+          }}
+        >
+          <div className="blob-y">
+            <div
+              className="h-full w-full rounded-full bg-amber-400/30 dark:bg-sky-500/30 blur-3xl opacity-70
+                   animate-[twinkle-soft_4s_ease-in-out_infinite]"
+              style={{
+                animationName: "twinkle-soft, wobble",
+                animationDuration: "4s, 5.4s",
+                animationTimingFunction: "ease-in-out, ease-in-out",
+                animationIterationCount: "infinite, infinite",
+                animationDelay: "2.1s, 1.2s",
+              }}
+            />
+          </div>
+        </div>
       </div>
 
       <main>

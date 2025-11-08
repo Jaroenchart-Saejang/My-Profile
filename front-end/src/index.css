@@ -76,14 +76,75 @@ body,
   scroll-margin-top: 96px;
 }
 
+/* soft brightness breathing (from earlier) */
 @keyframes twinkle-soft {
-  0%, 100% { opacity: .12; transform: scale(1); }
-  25%      { opacity: .16; transform: scale(1.01); }
-  50%      { opacity: .20; transform: scale(1.02); }
-  75%      { opacity: .16; transform: scale(1.01); }
+  0%,
+  100% {
+    opacity: 0.12;
+    transform: scale(1);
+  }
+  25% {
+    opacity: 0.16;
+    transform: scale(1.01);
+  }
+  50% {
+    opacity: 0.2;
+    transform: scale(1.02);
+  }
+  75% {
+    opacity: 0.16;
+    transform: scale(1.01);
+  }
+}
+
+/* tiny wobble so it feels like swimming (optional) */
+@keyframes wobble {
+  0%,
+  100% {
+    transform: rotate(-2deg) scale(1);
+  }
+  50% {
+    transform: rotate(2deg) scale(1.02);
+  }
+}
+
+/* DVD-style bounce using nested transforms */
+.blob-x {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: var(--w); /* e.g., 80rem */
+  height: var(--h); /* e.g., 50rem */
+  animation: moveX var(--dur-x, 14s) linear infinite alternate;
+  will-change: transform;
+}
+.blob-y {
+  width: 100%;
+  height: 100%;
+  animation: moveY var(--dur-y, 10s) linear infinite alternate;
+  will-change: transform;
+}
+
+@keyframes moveX {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(calc(100vw - var(--w)));
+  }
+}
+@keyframes moveY {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(calc(100vh - var(--h)));
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .reduce-motion { animation: none !important; }
+  .blob-x,
+  .blob-y {
+    animation: none !important;
+  }
 }
-

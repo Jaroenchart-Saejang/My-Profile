@@ -1,8 +1,8 @@
 export const SITE = {
-  name: "Your Name",
-  role: "Software Engineer",
+  name: "Jaroenchart Saejang",
+  role: "AI/ML Engineer plus a little bit of Full-Stack Development",
   location: "Bangkok, TH",
-  email: "you@example.com",
+  email: "jrcsjang@gmail.com",
   socials: {
     github: "https://github.com/yourname",
     linkedin: "https://www.linkedin.com/in/yourname",
