@@ -90,13 +90,14 @@ export default function Navbar() {
           {/* Resume (icon button) */}
           <a
             href={SITE.resumeUrl}
-            className="btn-primary hidden md:inline-flex h-10 w-10 items-center justify-center"
+            className="btn-primary hidden md:inline-flex !h-12 !w-12 items-center justify-center rounded-full
+             [&>svg]:!h-10 [&>svg]:!w-10"
             target="_blank"
             rel="noreferrer"
             aria-label="Resume"
             title="Resume"
           >
-            <FileText className="h-5 w-5" />
+            <FileText aria-hidden="true" />
             <span className="sr-only">Resume</span>
           </a>
 

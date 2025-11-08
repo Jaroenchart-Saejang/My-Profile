@@ -4,14 +4,14 @@ export const SITE = {
   location: "Bangkok, TH",
   email: "jrcsjang@gmail.com",
   socials: {
-    github: "https://github.com/yourname",
+    github: "https://github.com/Jaroenchart-Saejang",
     linkedin: "https://www.linkedin.com/in/yourname",
     twitter: "https://twitter.com/yourname",
   },
-  resumeUrl: "/resume.pdf",
+  resumeUrl: "JAROENCHART SAEJANG_CV.pdf",
   hero: {
-    headline: "I build reliable web apps and data tools.",
-    sub: "Full‑stack developer focused on delightful UX, performance, and clean architecture.",
+    headline: "I build robust AI/ML systems and data platforms.",
+    sub: "AI/ML engineer focused on cloud-native pipelines, MLOps, and scalable analytics—with just enough full-stack to ship !!!.",
   },
 };
 

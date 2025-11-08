@@ -61,6 +61,13 @@ body,
          bg-white/70 dark:bg-slate-900/70 backdrop-blur shadow-soft;
 }
 
+/* .card {
+  @apply inline-block w-fit overflow-hidden
+         rounded-2xl border border-slate-200 dark:border-slate-800
+         bg-white dark:bg-slate-900
+         shadow-soft; /* or shadow-md if you don't have shadow-soft 
+} */
+
 .btn-primary {
   @apply inline-flex items-center gap-2 rounded-xl bg-brand-600 px-4 py-2
          font-semibold text-white shadow-soft hover:bg-brand-500 transition;

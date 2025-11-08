@@ -27,7 +27,7 @@ export default function App() {
           <div className="blob-y">
             <div
               className="h-full w-full rounded-full bg-amber-400/50 dark:bg-sky-500/40 blur-3xl
-                   animate-[twinkle-soft_8s_ease-in-out_infinite]"
+                    animate-[twinkle-soft_8s_ease-in-out_infinite]"
               style={{
                 animationName: "twinkle-soft, wobble",
                 animationDuration: "8s, 6s",

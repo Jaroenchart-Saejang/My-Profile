@@ -3,7 +3,7 @@ import { SITE } from "../data/site.js";
 export default function Hero() {
   return (
     <section id="home" className="section-py container-px">
-      <div className="mx-auto grid max-w-6xl grid-cols-1 items-center gap-10 md:grid-cols-2">
+      <div className="p-4 mx-auto grid max-w-6xl grid-cols-1 items-center gap-10 md:grid-cols-2">
         <div>
           <p className="mb-3 text-sm font-semibold tracking-wide text-brand-700 dark:text-brand-300">
             {SITE.role} · {SITE.location}
@@ -32,20 +32,15 @@ export default function Hero() {
           </div>
         </div>
 
-        <div className="relative">
-          <div className="card p-4 md:p-6">
+        <div className="relative flex items-center justify-center">
+          <div className="right-0 card p-4 md:p-6 w-[280px] md:w-[350px]">
             <div className="aspect-square w-full overflow-hidden rounded-xl">
               <img
-                src="https://images.unsplash.com/photo-1542831371-29b0f74f9713?q=80&w=1200&auto=format&fit=crop"
+                src="Profile.jpg"
                 alt="workspace"
                 className="h-full w-full object-cover"
                 loading="lazy"
               />
-            </div>
-            <div className="mt-4 grid grid-cols-3 gap-2 text-center text-xs text-slate-500 dark:text-slate-400">
-              <div className="badge">React</div>
-              <div className="badge">Tailwind</div>
-              <div className="badge">Vite</div>
             </div>
           </div>
         </div>
