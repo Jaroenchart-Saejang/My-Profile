@@ -50,7 +50,7 @@ export default function Projects() {
     <Section
       id="projects"
       title="Projects"
-      subtitle="A selection of things I built or collaborated on."
+      subtitle="A selection of Projects I've worked on."
     >
       <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {PROJECTS.map((p) => (

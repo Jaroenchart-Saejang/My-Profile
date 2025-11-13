@@ -85,12 +85,12 @@ body,
 
 /* brightness only */
 @keyframes glow {
-  0%,
-  100% {
-    opacity: var(--glow-min, 0.10);
-  }
+  0% ,
   50% {
-    opacity: var(--glow-max, 0.20);
+    opacity: var(--glow-max, 0.4);
+  }
+  100% {
+    opacity: var(--glow-min, 0.2);
   }
 }
 
